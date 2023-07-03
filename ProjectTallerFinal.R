@@ -1,3 +1,5 @@
+# TALLER FINAL DE ESTADISTICA
+
 
 #Primera Pregunta
 
@@ -57,11 +59,4 @@ limite_superior <- x_media + margen_
 nivel_de_confianza <- c(limite_inferior, limite_superior)
 nivel_de_confianza
 
-
-
-x <- 248
-mu <- 250
-sd <- 2
-pnorm(x,mean=mu,sd)
-plot(density(rnorm(5000,mean=mu,sd)), main="Distribución normal")
 
