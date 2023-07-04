@@ -3,20 +3,56 @@
 
 #Primera Pregunta
 
-prob_disconforme <- pnorm(245, mean = 250, sd = 2, lower.tail = FALSE) +
-  pnorm(255, mean = 250, sd = 2, lower.tail = TRUE)
+# a)
+# Cálculo de la probabilidad utilizando la distribución normal
 
+media <- 250
+desviacion <- 2
+rango_inferior <- 245
+rango_superior <- 255
+
+# Estandarización de los valores de los extremos del rango
+z_inferior <- (rango_inferior - media) / desviacion
+z_superior <- (rango_superior - media) / desviacion
+
+# Cálculo de la probabilidad acumulada de los valores estandarizados
+prob_inferior <- pnorm(z_inferior)
+prob_superior <- pnorm(z_superior)
+
+# Cálculo de la probabilidad de que el próximo producto sea clasificado como disconforme
+prob_disconforme <- prob_superior - prob_inferior
+
+# Imprimir resultado
 prob_disconforme
 
-# Cálculo del valor
-valor_peso_muy_alto <- qnorm(0.002, mean = 250, sd = 2)
 
-# Resultado
-valor_peso_muy_alto
+# b)
+# Cálculo del valor límite para el 0.2% superior
 
-prob_max_2_disconformes <- sum(dbinom(0:2, size = 10, prob = prob_disconforme))
+media <- 250
+desviacion <- 2
+prob_superior <- 0.002  # 0.2% convertido a probabilidad
 
-# Resultado
+# Cálculo del valor Z correspondiente al percentil 99.8
+z_superior <- qnorm(1 - prob_superior)
+
+# Cálculo del límite superior de peso
+limite_superior <- media + (z_superior * desviacion)
+
+# Imprimir resultado
+limite_superior
+
+
+# c)
+# Cálculo de la probabilidad utilizando la distribución binomial
+
+tamaño_muestra <- 10
+probabilidad_disconforme <- 0.9876  # Probabilidad obtenida anteriormente
+
+# Calcular la probabilidad de máximo 2 productos disconformes
+prob_max_2_disconformes <- sum(dbinom(0:2, size = tamaño_muestra, prob = probabilidad_disconforme))
+
+# Imprimir resultado
 prob_max_2_disconformes
 
 
@@ -59,9 +95,7 @@ limite_superior <- x_media + margen_
 nivel_de_confianza <- c(limite_inferior, limite_superior)
 nivel_de_confianza
 
-
-#4 pregunta
-
+#cuarta pregunta
 # Datos de tiempo para fallar del componente
 data <- c(13.5518731, 0.3752651, 5.3344134, 1.7478818, 3.8793485, 4.1063320,
           4.0648515, 3.0796885, 0.3805058, 4.5867865, 1.7191893, 5.3809083,
@@ -81,4 +115,8 @@ interval <- t.test(data, conf.level = confidence_level)$conf.int
 lower <- interval[1]
 upper <- interval[2]
 
+#Mostrar
+cat("Intervalo de confianza del", confidence_level * 100, "%:\n")
+cat("Límite inferior:", lower, "\n")
+cat("Límite superior:", upper, "\n\n")
 
