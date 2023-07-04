@@ -60,3 +60,25 @@ nivel_de_confianza <- c(limite_inferior, limite_superior)
 nivel_de_confianza
 
 
+#4 pregunta
+
+# Datos de tiempo para fallar del componente
+data <- c(13.5518731, 0.3752651, 5.3344134, 1.7478818, 3.8793485, 4.1063320,
+          4.0648515, 3.0796885, 0.3805058, 4.5867865, 1.7191893, 5.3809083,
+          1.3784754, 4.8355531, 1.3360657, 4.7943754, 4.7052784, 9.8394008,
+          6.3776400, 3.8306637)
+
+# Intervalo de confianza del 90%
+confidence_level <- 0.90
+n <- length(data)
+mean_data <- mean(data)
+sd_data <- sd(data)
+
+# Cálculo del intervalo de confianza utilizando la distribución t de Student
+interval <- t.test(data, conf.level = confidence_level)$conf.int
+
+# Resultados del intervalo de confianza
+lower <- interval[1]
+upper <- interval[2]
+
+
