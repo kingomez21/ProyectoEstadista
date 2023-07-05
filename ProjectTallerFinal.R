@@ -119,3 +119,25 @@ upper <- interval[2]
 cat("Intervalo de confianza del", confidence_level * 100, "%:\n")
 cat("Límite inferior:", lower, "\n")
 cat("Límite superior:", upper, "\n\n")
+
+#quinta pregunta
+#a) 
+#Distribución binomial
+#Utilizamos la distribución binomial porque tenemos:
+#N° fijo de ensayos = 60
+#Resultados pósibles = 2(Defectuoso o no defectuoso)
+#Probabilidad de éxito en cada ensayo = 1.0%
+
+#b)
+n <- 60  #Tamaño de la muestra
+p <- 0.01  #Probabilidad de éxito (frascos defectuosos)
+
+#Cantidad esperada de frascos defectuosos
+cantidad_esperada <- n * p
+cantidad_esperada
+
+#c)
+#Desviación estándar
+desviacion_estandar <- sqrt(n * p * (1 - p))
+desviacion_estandar
+
