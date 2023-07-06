@@ -1,4 +1,6 @@
 # TALLER FINAL DE ESTADISTICA
+# Juan Sebastian Gomez Mezu - 2110306
+# Juan Camilo Florez Rivera - 2110302
 
 
 #Primera Pregunta
@@ -75,6 +77,8 @@ numero_esperado_llegan_tiempo <- 35 * 0.95
 cat("El número esperado de los envíos que llegan a tiempo es de:", numero_esperado_llegan_tiempo)
 
 
+
+
 #Tercera pregunta
 
 # Datos de muestra
@@ -96,6 +100,8 @@ limite_superior <- x_media + margen_
 # Resultado
 nivel_de_confianza <- c(limite_inferior, "-", limite_superior)
 cat("El intervalor de confianza estaría entre", nivel_de_confianza)
+
+
 
 
 #cuarta pregunta
@@ -122,6 +128,9 @@ upper <- interval[2]
 cat("Intervalo de confianza es del", confidence_level * 100, "%:\n")
 cat("Límite inferior:", lower, "\n")
 cat("Límite superior:", upper, "\n\n")
+
+
+
 
 #quinta pregunta
 cat(" a)\n") 
