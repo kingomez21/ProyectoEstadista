@@ -23,7 +23,7 @@ prob_superior <- pnorm(z_superior)
 prob_disconforme <- prob_superior - prob_inferior
 
 # Imprimir resultado
-prob_disconforme
+cat("La probabilidad de que el próximo producto sea clasificado como disconforme será de:",prob_disconforme, "es dedcir, un ", prob_disconforme*100,"%")
 
 
 # b)
@@ -33,6 +33,7 @@ media <- 250
 desviacion <- 2
 prob_superior <- 0.002  # 0.2% convertido a probabilidad
 
+
 # Cálculo del valor Z correspondiente al percentil 99.8
 z_superior <- qnorm(1 - prob_superior)
 
@@ -40,7 +41,9 @@ z_superior <- qnorm(1 - prob_superior)
 limite_superior <- media + (z_superior * desviacion)
 
 # Imprimir resultado
-limite_superior
+
+cat("El valor es:",limite_superior)
+
 
 
 # c)
@@ -60,17 +63,16 @@ prob_max_2_disconformes
 #Segunda Pregunta
 
 prob_tres_lleguen_tarde <- dbinom(3, size = 35, prob = 0.05)
-prob_tres_lleguen_tarde
+cat("La probabilidad de que tres lleguen tarde es:",prob_tres_lleguen_tarde,", es decir un", prob_tres_lleguen_tarde*100,"%")
 
 prob_ninguno_llegue_tarde <- dbinom(0, size = 35, prob = 0.05)
-prob_ninguno_llegue_tarde
+cat("La probabilidad de que ninguno llegue tarde es:",prob_ninguno_llegue_tarde,", es decir un", prob_ninguno_llegue_tarde*100,"%")
 
 prob_max_uno_llegue_tarde <- sum(dbinom(0:1, size = 35, prob = 0.05))
-prob_max_uno_llegue_tarde
+cat("La probabilidad de que máximo uno llegue tarde es:",prob_max_uno_llegue_tarde,", es decir un", prob_max_uno_llegue_tarde*100,"%")
 
 numero_esperado_llegan_tiempo <- 35 * 0.95
-numero_esperado_llegan_tiempo
-
+cat("El número esperado de los envíos que llegan a tiempo es de:", numero_esperado_llegan_tiempo)
 
 
 #Tercera pregunta
@@ -92,8 +94,9 @@ limite_inferior <- x_media - margen_
 limite_superior <- x_media + margen_
 
 # Resultado
-nivel_de_confianza <- c(limite_inferior, limite_superior)
-nivel_de_confianza
+nivel_de_confianza <- c(limite_inferior, "-", limite_superior)
+cat("El intervalor de confianza estaría entre", nivel_de_confianza)
+
 
 #cuarta pregunta
 # Datos de tiempo para fallar del componente
@@ -116,7 +119,29 @@ lower <- interval[1]
 upper <- interval[2]
 
 #Mostrar
-cat("Intervalo de confianza del", confidence_level * 100, "%:\n")
+cat("Intervalo de confianza es del", confidence_level * 100, "%:\n")
 cat("Límite inferior:", lower, "\n")
 cat("Límite superior:", upper, "\n\n")
+
+#quinta pregunta
+cat(" a)\n") 
+cat("Distribución binomial\n")
+cat("Utilizamos la distribución binomial porque tenemos:\n")
+cat("N° fijo de ensayos = 60\n")
+cat("Resultados pósibles = 2(Defectuoso o no defectuoso)\n")
+cat("Probabilidad de éxito en cada ensayo = 1.0%\n")
+
+#b)
+n <- 60  #Tamaño de la muestra
+p <- 0.01  #Probabilidad de éxito (frascos defectuosos)
+
+#Cantidad esperada de frascos defectuosos
+cantidad_esperada <- n * p
+cat("La cantidad esperada de frascos defectuosos será de:", cantidad_esperada)
+
+#c)
+#Desviación estándar
+desviacion_estandar <- sqrt(n * p * (1 - p))
+cat("La desviación estandar es apróximadamente de:", desviacion_estandar)
+
 
