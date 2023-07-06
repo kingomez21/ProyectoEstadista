@@ -1,4 +1,6 @@
 # TALLER FINAL DE ESTADISTICA
+# Juan Sebastian Gomez Mezu - 2110306
+# Juan Camilo Florez Rivera - 2110302
 
 
 #Primera Pregunta
@@ -33,6 +35,7 @@ media <- 250
 desviacion <- 2
 prob_superior <- 0.002  # 0.2% convertido a probabilidad
 
+
 # Cálculo del valor Z correspondiente al percentil 99.8
 z_superior <- qnorm(1 - prob_superior)
 
@@ -40,7 +43,9 @@ z_superior <- qnorm(1 - prob_superior)
 limite_superior <- media + (z_superior * desviacion)
 
 # Imprimir resultado
+
 cat("El valor es:",limite_superior)
+
 
 
 # c)
@@ -72,6 +77,8 @@ numero_esperado_llegan_tiempo <- 35 * 0.95
 cat("El número esperado de los envíos que llegan a tiempo es de:", numero_esperado_llegan_tiempo)
 
 
+
+
 #Tercera pregunta
 
 # Datos de muestra
@@ -93,6 +100,9 @@ limite_superior <- x_media + margen_
 # Resultado
 nivel_de_confianza <- c(limite_inferior, "-", limite_superior)
 cat("El intervalor de confianza estaría entre", nivel_de_confianza)
+
+
+
 
 #cuarta pregunta
 # Datos de tiempo para fallar del componente
@@ -119,6 +129,9 @@ cat("Intervalo de confianza es del", confidence_level * 100, "%:\n")
 cat("Límite inferior:", lower, "\n")
 cat("Límite superior:", upper, "\n\n")
 
+
+
+
 #quinta pregunta
 cat(" a)\n") 
 cat("Distribución binomial\n")
@@ -139,4 +152,5 @@ cat("La cantidad esperada de frascos defectuosos será de:", cantidad_esperada)
 #Desviación estándar
 desviacion_estandar <- sqrt(n * p * (1 - p))
 cat("La desviación estandar es apróximadamente de:", desviacion_estandar)
+
 
