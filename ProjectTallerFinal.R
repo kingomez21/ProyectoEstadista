@@ -33,6 +33,7 @@ media <- 250
 desviacion <- 2
 prob_superior <- 0.002  # 0.2% convertido a probabilidad
 
+
 # Cálculo del valor Z correspondiente al percentil 99.8
 z_superior <- qnorm(1 - prob_superior)
 
@@ -40,7 +41,9 @@ z_superior <- qnorm(1 - prob_superior)
 limite_superior <- media + (z_superior * desviacion)
 
 # Imprimir resultado
+
 cat("El valor es:",limite_superior)
+
 
 
 # c)
@@ -94,6 +97,7 @@ limite_superior <- x_media + margen_
 nivel_de_confianza <- c(limite_inferior, "-", limite_superior)
 cat("El intervalor de confianza estaría entre", nivel_de_confianza)
 
+
 #cuarta pregunta
 # Datos de tiempo para fallar del componente
 data <- c(13.5518731, 0.3752651, 5.3344134, 1.7478818, 3.8793485, 4.1063320,
@@ -139,4 +143,5 @@ cat("La cantidad esperada de frascos defectuosos será de:", cantidad_esperada)
 #Desviación estándar
 desviacion_estandar <- sqrt(n * p * (1 - p))
 cat("La desviación estandar es apróximadamente de:", desviacion_estandar)
+
 
